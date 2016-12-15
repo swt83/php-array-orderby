@@ -12,12 +12,12 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:swt83/php-object-to-array.git"
+            "url": "git@github.com:swt83/php-object2array.git"
         }
     ],
     "require": {
         "php": ">=5.3.0",
-        "travis/objecttoarray": "dev-master"
+        "travis/object2array": "dev-master"
     },
     "autoload": {
         "files": [
