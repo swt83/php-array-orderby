@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "travis/object2array": "*"
+        "travis/object2array": "dev-master"
     },
     "autoload": {
         "files": [
