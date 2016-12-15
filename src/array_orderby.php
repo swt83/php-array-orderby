@@ -6,6 +6,10 @@ if (!function_exists('array_orderby'))
 {
     function array_orderby($array, $cols)
     {
+        // convert to array
+        $array = object2array($array);
+
+        // process
         $colarr = array();
         foreach ($cols as $col => $order) {
             $colarr[$col] = array();
