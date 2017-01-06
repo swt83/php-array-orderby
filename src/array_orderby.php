@@ -4,9 +4,6 @@ if (!function_exists('array_orderby'))
 {
     function array_orderby($array, $cols)
     {
-        // convert to array
-        $array = object2array($array);
-
         // capture values
         $colarr = [];
         foreach ($cols as $col => $order)
