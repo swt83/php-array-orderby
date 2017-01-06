@@ -8,15 +8,34 @@ Normall install via Composer.
 
 ## Usage
 
-I took this code from the [PHP docs](http://php.net/manual/en/function.array-multisort.php#91638).  It works great.
+Throw any array or object with the coordinates of the field you want to sort by:
 
 ```php
-$stuff = array(
-    array('id'=>1,'name'=>'aA','cat'=>'cc'),
-    array('id'=>2,'name'=>'aa','cat'=>'dd'),
-    array('id'=>3,'name'=>'bb','cat'=>'cc'),
-    array('id'=>4,'name'=>'bb','cat'=>'dd')
-);
+$evangelists = [
+    ['id' => 1, 'name' => 'Paul T.', 'email' => 'paul@corinth.com'],
+    ['id' => 2, 'name' => 'Timothy D.', 'email' => 'timothy@antioch.com'],
+];
 
-$results = array_orderby($stuff, array('name'=>SORT_DESC, 'cat'=>SORT_ASC));
+$results = array_orderby($evangelists, ['name' => SORT_DESC, 'email' => SORT_ASC]);
+
+$evangelists = [
+    [
+    	'id' => 1,
+    	'name' => 'Paul T.',
+    	'emails' => [
+    		'primary' => 'paul@corinth.com',
+    		'secondary' => 'saul@tarsus.com',
+    	],
+    ],
+    [
+    	'id' => 2,
+    	'name' => 'Timothy B.',
+    	'emails' => [
+    		'primary' => 'timothy@antioch.com',
+    		'secondary' => 'timmy@geocities.com',
+    	],
+    ],
+];
+
+$results = array_orderby($evangelists, ['emails.primary' => SORT_DESC]); // dot walking the array
 ```
