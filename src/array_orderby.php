@@ -5,7 +5,7 @@ if (!function_exists('array_orderby'))
     function array_orderby($array, $cols)
     {
         // catch errors...
-        if (!is_array($array) or !is_array($cols)) trigger_error('Must pass array.');
+        if (!sizeof($array)) return $array;
 
         // capture values
         $colarr = [];
